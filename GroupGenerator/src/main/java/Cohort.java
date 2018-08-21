@@ -10,7 +10,6 @@ public class Cohort {
 		this.students = new ArrayList<>();
 		this.groups = new ArrayList<>();
 		this.students.add(new Student("Vicky"));
-		this.students.add(new Student("Vicky"));
 		this.students.add(new Student("Stoo"));
 		this.students.add(new Student("Pat"));
 		this.students.add(new Student("Kirstin"));
