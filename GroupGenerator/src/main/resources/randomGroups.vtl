@@ -1,0 +1,14 @@
+
+<p> Here are the random groups:</p>
+
+<ul>
+
+    #foreach($group in $randomGroups
+    <li>
+        #foreach($student in $group.getGroupStudents())
+            $student.getName()
+        #end
+    </li>
+    #end
+
+</ul>

@@ -4,9 +4,11 @@ import java.util.Collections;
 public class Cohort {
 
 	private ArrayList<Student> students;
+	private ArrayList<Group> groups;
 
 	public Cohort() {
 		this.students = new ArrayList<>();
+		this.groups = new ArrayList<>();
 		this.students.add(new Student("Vicky"));
 		this.students.add(new Student("Vicky"));
 		this.students.add(new Student("Stoo"));
@@ -42,6 +44,36 @@ public class Cohort {
 		twoRandomStudents.add(students.get(0));
 		twoRandomStudents.add(students.get(1));
 		return twoRandomStudents;
+
+	}
+
+	public ArrayList<Group> getGroups(int groupsize) {
+		createAllGroups(groupsize);
+		return groups;
+	}
+
+	private void createAllGroups(int groupSize){
+
+		// Clear the list of groups before we create a new set of groups
+		groups.clear();
+		int groupCounter = 0;
+
+		for (Student student : this.students ) {
+
+			// Create a new group for the first student on the list of students
+			if (groups.size() == 0){
+				groups.add(new Group(groupSize));
+			}
+
+			boolean addedToGroup = groups.get(groupCounter).addStudent(student);
+
+			// If the current group if full then create a new, empty group and add the student to it
+			if (addedToGroup == false){
+				groups.add(new Group(groupSize));
+				groupCounter++;
+				groups.get(groupCounter).addStudent(student);
+			}
+		}
 
 	}
 
