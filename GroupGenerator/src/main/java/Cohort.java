@@ -53,6 +53,7 @@ public class Cohort {
 	}
 
 	private void createAllGroups(int groupSize){
+		Collections.shuffle(students);
 
 		// Clear the list of groups before we create a new set of groups
 		groups.clear();
@@ -78,6 +79,8 @@ public class Cohort {
 	}
 
 }
+
+
 
 
 

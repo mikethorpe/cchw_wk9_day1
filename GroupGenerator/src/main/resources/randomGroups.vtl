@@ -3,10 +3,10 @@
 
 <ul>
 
-    #foreach($group in $randomGroups
+    #foreach($group in $randomGroups)
     <li>
         #foreach($student in $group.getGroupStudents())
-            $student.getName()
+            $student.getName(),
         #end
     </li>
     #end
